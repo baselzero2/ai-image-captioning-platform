@@ -1,1 +1,0 @@
-C:\Users\ASUS\Desktop\image-captioning-web\backend\venv\Scripts\python.exe
