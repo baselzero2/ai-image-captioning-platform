@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('Impact') }} - See What AI Sees{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+  <h1 class="text-primary">{{ _('Real-World Impact') }}</h1>
+  <p class="lead text-secondary">{{ _('Discover how AI captioning can serve real communities and solve practical challenges.') }}</p>
+</div>
+
+<!-- Use Cases Section -->
+<section class="mb-5">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm h-100">
+        <h4 class="text-success">{{ _('Accessibility for the Visually Impaired') }}</h4>
+        <p>{{ _('Our captioning tool helps blind users understand images through audio descriptions, enhancing independence and digital access.') }}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm h-100">
+        <h4 class="text-info">{{ _('Special Education') }}</h4>
+        <p>{{ _('Teachers can use AI-generated captions to describe visual content to students with learning or visual disabilities.') }}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm h-100">
+        <h4 class="text-warning">{{ _('Government & Archiving') }}</h4>
+        <p>{{ _('Public institutions can auto-caption image databases for documentation, accessibility, and searchability.') }}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm h-100">
+        <h4 class="text-primary">{{ _('Smart Applications') }}</h4>
+        <p>{{ _('Mobile apps can integrate captioning to describe photos in real time, improving UX and accessibility.') }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Demo Section -->
+<section class="text-center mb-5">
+  <h3 class="text-primary mb-3">{{ _('Try Captioning in Accessibility Mode') }}</h3>
+  <p class="text-secondary">{{ _('Upload an image and hear its description instantly — designed for blind users and educators.') }}</p>
+
+  <form action="/impact-upload" method="post" enctype="multipart/form-data" id="impactCaptionForm" class="d-inline-block">
+    <input type="file" name="image" accept="image/*" class="form-control mb-2" required>
+    <button type="submit" class="btn btn-primary">{{ _('Generate & Speak') }}</button>
+  </form>
+
+  <div id="impactLoading" class="mt-3" style="display:none;">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-2">{{ _('Processing image, please wait...') }}</p>
+  </div>
+
+  {% if image_url and caption %}
+  <div class="card mt-4 p-4 shadow-sm">
+    <h5 class="text-success">{{ _('Caption:') }}</h5>
+    <p id="impactCaptionText" class="lead">{{ caption }}</p>
+    <button class="btn btn-warning text-dark" onclick="speakImpactCaption()">🔊 {{ _('Listen') }}</button>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const caption = document.getElementById("impactCaptionText");
+      if (caption) {
+        const utterance = new SpeechSynthesisUtterance(caption.textContent);
+        utterance.lang = "{{ 'ar-SA' if session.get('lang') == 'ar' else 'en-US' }}";
+        utterance.rate = 1;
+        speechSynthesis.speak(utterance);
+      }
+    });
+  </script>
+  {% endif %}
+</section>
+
+<script>
+  document.getElementById('impactCaptionForm').addEventListener('submit', function () {
+    document.getElementById('impactLoading').style.display = 'block';
+  });
+
+  function speakImpactCaption() {
+    const caption = document.getElementById("impactCaptionText");
+    if (!caption) return;
+    const utterance = new SpeechSynthesisUtterance(caption.textContent);
+    utterance.lang = "{{ 'ar-SA' if session.get('lang') == 'ar' else 'en-US' }}";
+    utterance.rate = 1;
+    speechSynthesis.speak(utterance);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,111 @@
+/* Base styling */
+body {
+  background-color: #f0f8ff; 
+  color: #003366;
+  font-family: 'Segoe UI', 'Quicksand', sans-serif;
+}
+
+
+/* Global font override */
+body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, label, textarea, small, .nav-link {
+  font-family: 'Cursive', 'Segoe Script', sans-serif !important;
+}
+
+
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00BFFF !important;
+  text-decoration: underline;
+}
+
+/* Logo text */
+.navbar-brand span {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-family: 'Cursive', 'Segoe Script', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #002244;
+  border-color: #002244;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #001a33;
+  border-color: #001a33;
+}
+* Footer gradient */
+.gradient-footer {
+  background: linear-gradient(to right, #003366, #00BFFF);
+}
+
+/* Cards and containers */
+.card, .btn, .form-control {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #003366;
+  font-weight: 700;
+}
+
+/* Upload section */
+.upload-box {
+  background-color: #ffffff;
+  border: 2px dashed #00BFFF;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #003366;
+}
+
+
+.btn-outline-secondary {
+  border-color: #003366;
+  color: #003366;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.btn-info {
+  background-color: #005f99;
+  border-color: #005f99;
+  color: #ffffff;
+}
+
+.btn-info:hover {
+  background-color: #004d80;
+  border-color: #004d80;
+}
+
+
+
+.arabic-btn {
+    background-color: #003366 !important;  
+    border-color: #003366 !important;
+    color: white !important;
+}
+.arabic-btn:hover {
+    background-color: #003366 !important;
+}

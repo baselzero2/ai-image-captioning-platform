@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('About') }} - {{ _('Image Captioning Project') }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm p-4">
+    <h2 class="mb-3">{{ _('About the Project') }}</h2>
+    <p>
+        {{ _('This web application is part of a master\'s graduation project at the Syrian Virtual University.') }}
+        {{ _('It uses artificial intelligence to generate descriptive captions for uploaded images.') }}
+    </p>
+    <p>
+        {{ _('The backend is built with') }} <strong>Flask</strong>, {{ _('and the AI model is integrated through a custom Python module.') }}
+        {{ _('The frontend is designed to be simple and intuitive, with plans for future enhancements.') }}
+    </p>
+    <h4 class="mt-4">{{ _('Goals') }}</h4>
+    <ul>
+        <li>{{ _('Demonstrate practical integration of AI in web applications') }}</li>
+        <li>{{ _('Enable automatic image understanding and description') }}</li>
+        <li>{{ _('Provide a clean, extensible architecture for future development') }}</li>
+    </ul>
+    <h4 class="mt-4">{{ _('Technologies Used') }}</h4>
+    <ul>
+        <li>{{ _('Python, Flask') }}</li>
+        <li>{{ _('HTML, CSS, JavaScript, Bootstrap') }}</li>
+        <li>{{ _('Custom AI model (image captioning)') }}</li>
+    </ul>
+</div>
+{% endblock %}

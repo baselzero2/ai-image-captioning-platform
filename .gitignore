@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Models and large files
+*.pt
+*.pth
+*.bin
+*.safetensors
+models/
+local_model_large/
+local_model_base/
+checkpoints/
+
+# Databases
+*.db
+instance/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
