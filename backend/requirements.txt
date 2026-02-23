@@ -1,0 +1,11 @@
+flask
+pillow
+numpy
+pandas
+scikit-learn
+transformers
+torch
+safetensors
+argostranslate
+tqdm
+requests
