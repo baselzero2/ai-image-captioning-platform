@@ -51,10 +51,7 @@ project/
 │   ├── batch_caption.py
 │   ├── compute_metrics.py
 │   └── results.csv
-│
-├── docs/
-│   ├── proposal.doc
-│   └── report.docx
+│  
 │
 └── compare_models.py
 ```
